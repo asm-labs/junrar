@@ -28,7 +28,7 @@ import com.github.junrar.io.IReadOnlyAccess;
 public interface Volume {
 	/**
 	 * @return the access
-	 * @throws IOException
+	 * @throws IOException if any IO error occur
 	 */
 	IReadOnlyAccess getReadOnlyAccess() throws IOException;
 

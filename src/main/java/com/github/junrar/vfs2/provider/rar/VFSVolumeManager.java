@@ -32,9 +32,6 @@ import com.github.junrar.util.VolumeHelper;
 public class VFSVolumeManager implements VolumeManager {
 	private final FileObject firstVolume;
 
-	/**
-	 * @param firstVolume
-	 */
 	public VFSVolumeManager(FileObject firstVolume) {
 		this.firstVolume = firstVolume;
 	}

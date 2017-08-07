@@ -1,31 +1,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.junrar</groupId>
-	<artifactId>junrar</artifactId>
-	<packaging>jar</packaging>
-	<version>0.8-SNAPSHOT</version>
-	<name>Java UnRar</name>
-	<description>rar decompression library in plain java</description>
-	<url>https://github.com/junrar/junrar</url>
+    <modelVersion>4.0.0</modelVersion>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
+    <groupId>org.asm-labs</groupId>
+    <artifactId>junrar</artifactId>
+    <version>0.8-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Java UnRar</name>
+    <description>rar decompression library in plain java</description>
+    <url>https://github.com/asm-labs/junrar</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <gpg.useagent>true</gpg.useagent>
+        <gpg.executable>gpg2</gpg.executable>
 	</properties>
 
-	<licenses>
-		<license>
-			<name>UnRar License</name>
-			<url>https://raw.github.com/junrar/junrar/master/license.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>UnRar License</name>
+            <url>https://raw.github.com/asm-labs/junrar/master/license.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
 	<scm>
-		<connection>scm:git:git@github.com:junrar/junrar.git</connection>
-		<developerConnection>scm:git:git@github.com:junrar/junrar.git</developerConnection>
-		<url>git@github.com:junrar/junrar.git</url>
+		<connection>scm:git:git@github.com:asm-labs/junrar.git</connection>
+		<developerConnection>scm:git:git@github.com:asm-labs/junrar.git</developerConnection>
+		<url>git@github.com:asm-labs/junrar.git</url>
 	</scm>
 
 	<developers>
@@ -59,7 +63,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -68,28 +72,27 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>
-								de.innosystec.unrar.testutil.JUnRarTestUtil
-							</mainClass>
-							<packageName>
-								de.innosystec.unrar.testutil
-							</packageName>
+							<mainClass>de.innosystec.unrar.testutil.JUnRarTestUtil</mainClass>
+							<packageName>de.innosystec.unrar.testutil</packageName>
 							<addClasspath>true</addClasspath>
 							<addExtensions />
 							<classpathPrefix />
 						</manifest>
 						<manifestEntries>
 							<mode>development</mode>
-							<url>${pom.url}</url>
+							<url>${project.url}</url>
 						</manifestEntries>
-						<manifestFile>
-							src/main/resources/META-INF/MANIFEST.MF
-						</manifestFile>
+						<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
 					</archive>
 				</configuration>
 			</plugin>
@@ -104,7 +107,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-compiler-plugin</artifactId>
-						<version>2.3.2</version>
+						<version>3.3</version>
 						<configuration>
 							<source>${maven.compiler.source}</source>
 							<target>${maven.compiler.source}</target>
@@ -128,7 +131,7 @@
 			</build>
 		</profile>
 	</profiles>
-	
+
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>

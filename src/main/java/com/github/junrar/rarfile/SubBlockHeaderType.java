@@ -47,7 +47,7 @@ public enum SubBlockHeaderType
 
 	/**
 	 * find the header type for the given short value
-	 * @param SubType the short value
+	 * @param subType the short value
 	 * @return the correspo nding enum or null
 	 */
 	public static SubBlockHeaderType findSubblockHeaderType(short subType)

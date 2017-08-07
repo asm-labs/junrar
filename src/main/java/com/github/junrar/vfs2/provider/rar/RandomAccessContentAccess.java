@@ -34,14 +34,14 @@ public class RandomAccessContentAccess implements IReadOnlyAccess {
 	private final RandomAccessContent rac;
 
 	/**
-	 * @param rac
+	 * @param rac content
 	 */
 	public RandomAccessContentAccess(RandomAccessContent rac) {
 		this.rac = rac;
 	}
 
 	/**
-	 * @param rac
+	 * @param file file
 	 * @throws FileSystemException
 	 */
 	public RandomAccessContentAccess(FileObject file)
